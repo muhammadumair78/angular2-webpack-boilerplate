@@ -1,0 +1,19 @@
+# Logs
+logs
+*.log
+
+# Build Directory
+dist/
+
+# Dependency directories
+node_modules/
+
+# Temporary Directories
+.sass-cache
+.tmp
+
+# IDE directory
+.idea/
+
+# Temp files
+robots.txt
