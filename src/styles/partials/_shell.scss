@@ -1,0 +1,40 @@
+.body-wrap {
+    position: relative;
+    height: calc(100% - 49px);
+    .sidebar-area {
+        padding: 30px 0;
+        width: 200px;
+        float: left;
+        background: #999;
+        height: 100%; 
+        position: relative;
+        z-index: 99;
+        -webkit-box-shadow: 10px 0px 10px 0px rgba(50, 50, 50, 0.1);
+        -moz-box-shadow:    10px 0px 10px 0px rgba(50, 50, 50, 0.1);
+        box-shadow:         10px 0px 10px 0px rgba(50, 50, 50, 0.1);
+        ul {
+            li {
+                a {
+                    padding: 10px 0px 10px 30px;
+                    display: block;
+                    color: #000;
+                    border-bottom: 1px solid #000;
+                }
+            }
+        }
+    }
+    .content-area {
+        padding: 50px 30px;
+        float: left;
+        width: calc(100% - 200px);
+        height: 100%; 
+        overflow: hidden;
+        overflow-y: auto;
+        background: #fff;
+        .page-title {
+            border-bottom: 1px solid #999;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+    }
+}

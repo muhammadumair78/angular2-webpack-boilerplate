@@ -1,0 +1,64 @@
+// Responsive breakpoints Mixing
+$XXS: 480px;
+$XS: 767px;
+$SM: $XS + 1px;
+$MD: 992px;
+$LG: 1200px;
+$ELG: 1280px;
+
+$maxSM: $MD - 1px;
+$maxMD: $LG - 1px;
+
+// media queries
+
+@mixin mq($canvas) {
+  @if $canvas == XS {
+    @media only screen and (max-width: $XS) {
+      @content;
+    }
+  } @else if $canvas == XXS {
+    @media only screen and (max-width: $XXS) {
+      @content;
+    }
+  } @else if $canvas == LMD {
+    @media only screen and (max-width: $maxSM) {
+      @content;
+    }
+  } @else if $canvas == LLG {
+    @media only screen and (max-width: $maxMD) {
+      @content;
+    }
+  } @else if $canvas == OSM {
+    @media only screen and (min-width: $SM) and (max-width: $maxSM) {
+      @content;
+    }
+  } @else if $canvas == OMD {
+    @media only screen and (min-width: $MD) and (max-width: $maxMD) {
+      @content;
+    }
+  } @else if $canvas == ELG {
+    @media only screen and (min-width: $LG) and (max-width: $ELG) {
+      @content;
+    }
+  } @else if $canvas == MLG {
+    @media only screen and (min-width: $maxMD) {
+      @content;
+    }
+  } @else if $canvas == MMD {
+    @media only screen and (min-width: $maxSM) {
+      @content;
+    }
+  } @else if $canvas == MSM {
+    @media only screen and (min-width: $SM) {
+      @content;
+    }
+  } @else if $canvas == MinELG {
+    @media only screen and (min-width: $ELG) {
+      @content;
+    }
+  } @else if $canvas == minToMaxHeight {
+    @media only screen and (min-height: 360px) and (max-height: 410px) {
+      @content;
+    }
+  }
+}

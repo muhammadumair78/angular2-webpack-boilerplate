@@ -1,0 +1,23 @@
+<!--{{input | json}}-->
+<div *ngIf="model && visible">
+    <small *ngIf="input" class="text-danger">
+        <div *ngIf="input.required">
+            {{model.name | camelcasetonormal}} is required<br>
+        </div>
+        <span *ngIf="input.minlength">
+            Minimum length for {{model.name | camelcasetonormal}} is {{input.minlength.requiredLength}}<br>
+        </span>
+        <span *ngIf="input.maxlength">
+            Maximum length for {{model.name | camelcasetonormal}} is {{input.maxlength.requiredLength}}<br>
+        </span>
+        <span *ngIf="input.pattern">
+            Please enter a valid {{model.name | camelcasetonormal}}.
+            <span *ngIf="model.name === 'NewPassword' || model.name === 'Password'">Password should contain at least an uppercase letter, a special character and a number</span>
+            <span *ngIf="model.name === 'Url'">valid pattern for Url is http://www.example.com</span><br>
+        </span>
+        <span *ngIf="input.validateEqual === false">
+            <span *ngIf="model.name !== 'ConfirmPassword'">{{model.name | camelcasetonormal}} missmatch</span>
+            <span *ngIf="model.name === 'ConfirmPassword'">Password and confirm password do not match</span>
+        </span>
+    </small>
+</div>

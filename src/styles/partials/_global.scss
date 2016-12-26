@@ -1,0 +1,108 @@
+html, body {
+  height: 100%;
+  outline: none;
+}
+body {
+  line-height: 1.4;
+  font-size: 14px;
+  font-family: $font-roboto;
+  font-weight: 400;
+  overflow-x: hidden !important;
+  color: $primary-color;
+  background-color: $white-color;
+}
+.text-white {
+  color: $white-color;
+}
+.body-auto {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  -webkit-overflow-scrolling: touch;
+}
+.body-hidden {
+  overflow-y: hidden !important;
+}
+*, :after, :before {
+  box-sizing: border-box;
+}
+textarea:focus, input:focus, select:focus {
+  outline: 0;
+}
+input, textarea, select {
+  background-color: transparent;
+  border: 0 solid;
+}
+a, a:hover, a:visited, a:active, a:focus {
+  outline: 0;
+  text-decoration: none;
+  cursor: pointer;
+  outline-color: transparent;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6, p, li, img, ul, ol {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 0;
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 18px;
+}
+strong, b {
+  font-weight: 700;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.cursor-default {
+  cursor: default;
+}
+.height-100-p {
+  height: 100%;
+}
+@-moz-document url-prefix() {
+  .styled-select {
+    position: relative;
+  }
+  input {
+    &:required, &:invalid, &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+}
+input, textarea {
+  &::-moz-selection {
+    background: #EEE;
+    outline: none;
+  }
+  &::selection {
+    background: #EEE;
+    outline: none;
+  }
+}
+::-ms-clear {
+  display: none;
+}
+.y-scroll-none {
+  overflow-y: hidden;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,57 @@
+<div class="page-title">
+  <h1 class="clearfix">
+    Promotions List
+    <a class="btn btn-success pull-right" routerLink="/add-new-promotion">
+      Add New Promotion
+    </a>
+  </h1>
+</div>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th width="200">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let promotion of promotionslist">
+        <td>{{promotion.id}}</td>
+        <td>{{promotion.title}}</td>
+        <td>{{promotion.body}}</td>
+        <td>
+          <button class="btn btn-success" (click)="viewPromotion(promotion); promotionModal.open();">
+            View
+          </button>
+          <a class="btn btn-info" routerLink="../promotion-edit/{{promotion.id}}">
+            Edit
+          </a>
+          <button class="btn btn-danger" (click)="openPromotionDeleteModel(promotion); promotionDeleteModal.open();">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<modal #promotionModal>
+    <modal-header [show-close]="true">
+      <h4 class="modal-title">Promotion {{activePromotion.title}}</h4>
+    </modal-header>
+    <modal-body>
+      {{activePromotion.body}}
+    </modal-body>
+</modal>
+<modal #promotionDeleteModal (onClose)="dismissPromotionDeleteModel()">
+    <modal-header [show-close]="true">
+        <h4 class="modal-title">Alert!</h4>
+    </modal-header>
+    <modal-body>
+        Are you Sure you want to delete promotion?
+    </modal-body>
+    <modal-footer
+        [show-default-buttons]="true"
+        [dismiss-button-label]="'Cancel'"
+        [close-button-label]="'Delete Promotion'">
+    </modal-footer>
+</modal>
